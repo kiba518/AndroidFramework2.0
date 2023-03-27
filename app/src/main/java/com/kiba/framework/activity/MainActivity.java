@@ -3,6 +3,7 @@ import android.os.Bundle;
 import android.view.KeyEvent;
 import com.kiba.framework.R;
 import com.kiba.framework.activity.base.BaseActivity;
+import com.kiba.framework.fragment.MainFragment;
 
 
 public class MainActivity extends BaseActivity {
@@ -16,7 +17,7 @@ public class MainActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-
+        replaceFragment(new MainFragment());
     }
     /**
      * 菜单、返回键响应

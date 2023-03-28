@@ -3,6 +3,7 @@ package com.kiba.framework.utils.json;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapter;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
@@ -11,13 +12,11 @@ import com.google.gson.stream.JsonToken;
 import com.google.gson.stream.JsonWriter;
 
 import java.io.IOException;
+import java.lang.reflect.Type;
 
 public class JsonUtils {
 
-    public static   <T> T Deserialize(Class<T> tClass,String text) {
-        if (text == "timeout") {
-            return null;
-        }
+    public static <T> T Deserialize_FastJson(Class<T> tClass, String text) {
         try{
             T t = FastJsonUtils.toBean(text, tClass);
             return t;
@@ -25,17 +24,17 @@ public class JsonUtils {
 
     }
 
-    public static  String Serialize(Object obj){
+    public static  String Serialize_FastJson(Object obj){
         String text = FastJsonUtils.toJSONString(obj);
         return text;
     }
 
-    public static  String Serialize2(Object obj){
+    public static  String Serialize_Gson(Object obj){
         Gson gson=new GsonBuilder().registerTypeAdapterFactory(new GsonTypeAdapterFactory()).create();
         String json = gson.toJson(obj);
         return json;
     }
-    public static  <T> T Deserialize2(Class<T> tClass, String json){
+    public static  <T> T Deserialize_Gson(Class<T> tClass, String json){
 
         Gson gson=new GsonBuilder().registerTypeAdapterFactory(new GsonTypeAdapterFactory()).create();
         return  gson.fromJson(json, tClass);
@@ -44,10 +43,26 @@ public class JsonUtils {
 
     public static  <T,S> T Convert(Class<T> tClass,S source){
         Gson gson=new GsonBuilder().registerTypeAdapterFactory(new GsonTypeAdapterFactory()).create();
-        String jsonStr = JsonUtils.Serialize(source) ;
+        String jsonStr = JsonUtils.Serialize_FastJson(source) ;
         return gson.fromJson(jsonStr, tClass);
     }
 
+
+    /**
+     * 解析Json字符串
+     * @param json Json字符串
+     * @param typeOfT 泛型类
+     * @param <T>
+     * @return
+     */
+    public static <T> T Serialize_Gson(String json, Type typeOfT) {
+        try {
+            return new Gson().fromJson(json, typeOfT);
+        } catch (JsonParseException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 
 }
  class GsonTypeAdapterFactory implements TypeAdapterFactory {

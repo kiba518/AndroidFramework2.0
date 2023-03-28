@@ -3,7 +3,7 @@ import android.os.Bundle;
 import android.view.KeyEvent;
 import com.kiba.framework.R;
 import com.kiba.framework.activity.base.BaseActivity;
-import com.kiba.framework.fragment.MainFragment;
+import com.kiba.framework.fragment.main.MainFragment;
 
 
 public class MainActivity extends BaseActivity {

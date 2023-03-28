@@ -5,6 +5,7 @@ import java.math.BigDecimal;
 import java.net.URLDecoder;
 import java.net.URLEncoder;
 import java.text.DecimalFormat;
+import java.util.Arrays;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -231,4 +232,48 @@ public class StringUtils {
         }
         return rateStr.substring(0, num) + "." + afterData.substring(0, 2);
     }
+
+    /**
+     * 将对象转化为String
+     *
+     * @param object
+     * @return
+     */
+    public static String toString(Object object) {
+        if (object == null) {
+            return "null";
+        }
+        if (!object.getClass().isArray()) {
+            return object.toString();
+        }
+        if (object instanceof boolean[]) {
+            return Arrays.toString((boolean[]) object);
+        }
+        if (object instanceof byte[]) {
+            return Arrays.toString((byte[]) object);
+        }
+        if (object instanceof char[]) {
+            return Arrays.toString((char[]) object);
+        }
+        if (object instanceof short[]) {
+            return Arrays.toString((short[]) object);
+        }
+        if (object instanceof int[]) {
+            return Arrays.toString((int[]) object);
+        }
+        if (object instanceof long[]) {
+            return Arrays.toString((long[]) object);
+        }
+        if (object instanceof float[]) {
+            return Arrays.toString((float[]) object);
+        }
+        if (object instanceof double[]) {
+            return Arrays.toString((double[]) object);
+        }
+        if (object instanceof Object[]) {
+            return Arrays.deepToString((Object[]) object);
+        }
+        return "Couldn't find a correct type for the object";
+    }
+
 }

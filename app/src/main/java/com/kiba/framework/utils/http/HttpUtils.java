@@ -82,7 +82,7 @@ public class HttpUtils {
                     e.printStackTrace();
                     BaseResult baseResult=new BaseResult();
                     baseResult.code=-1;
-                    callback.Call(JsonUtils.Serialize(baseResult));
+                    callback.Call(JsonUtils.Serialize_FastJson(baseResult));
 
 
                 }
@@ -104,7 +104,7 @@ public class HttpUtils {
             HttpUtils.postRequest(urlAddress, param, con -> {
                 runOnUiThread(() -> {
 
-                    BaseResult baseResult = JsonUtils.Deserialize(BaseResult.class, con);
+                    BaseResult baseResult = JsonUtils.Deserialize_FastJson(BaseResult.class, con);
                     if (null != baseResult && baseResult.code == 1) {
                         Class thisClass = httpData.getClass();
 
@@ -115,7 +115,7 @@ public class HttpUtils {
                         Type genType = genTypeArr[0];
                         Class c1= (Class) genTypeArr[0];
 
-                        T result = (T)JsonUtils.Deserialize(c1, con);
+                        T result = (T)JsonUtils.Deserialize_FastJson(c1, con);
                         httpData.getData(result);
 
                     } else {
@@ -134,7 +134,7 @@ public class HttpUtils {
         }
 
     }
-    BaseResult baseResult = (BaseResult)JsonUtils.Deserialize(BaseResult.class, "con");
+    BaseResult baseResult = (BaseResult)JsonUtils.Deserialize_FastJson(BaseResult.class, "con");
     public static <T> void get(String param, String urlAddress, HttpData<T> httpData) {
 
         try {
@@ -144,7 +144,7 @@ public class HttpUtils {
 
                 runOnUiThread(() -> {
 
-                    BaseResult baseResult = (BaseResult)JsonUtils.Deserialize(Object.class, con);
+                    BaseResult baseResult = (BaseResult)JsonUtils.Deserialize_FastJson(Object.class, con);
                     if (null != baseResult && baseResult.code == 1) {
                         Class thisClass = httpData.getClass();
 
@@ -155,7 +155,7 @@ public class HttpUtils {
                         Type genType = genTypeArr[0];
                         Class c1= (Class) genTypeArr[0];
 
-                        T result = (T)JsonUtils.Deserialize(c1, con);
+                        T result = (T)JsonUtils.Deserialize_FastJson(c1, con);
                         httpData.getData(result);
 
                     } else {

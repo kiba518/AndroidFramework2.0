@@ -1,6 +1,7 @@
 package com.kiba.framework.utils;
 
 import android.app.Activity;
+import android.content.ContentResolver;
 import android.content.Context;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
@@ -26,6 +27,8 @@ import androidx.annotation.DrawableRes;
 import androidx.annotation.StyleableRes;
 import androidx.appcompat.content.res.AppCompatResources;
 
+import com.kiba.framework.MyApplication;
+
 
 /**
  * 工具类
@@ -38,6 +41,8 @@ public final class Utils {
     private Utils() {
         throw new UnsupportedOperationException("u can't instantiate me...");
     }
+
+
     /**
      * 主线程Handler
      */
@@ -51,6 +56,19 @@ public final class Utils {
         return MAIN_HANDLER;
     }
 
+
+    public static Context getContext() {
+        return MyApplication.getContext();
+    }
+
+    /**
+     * 获取全局ContentResolver
+     *
+     * @return ContentResolver
+     */
+    public static ContentResolver getContentResolver() {
+        return getContext().getContentResolver();
+    }
     /**
      * 在主线程中执行
      *

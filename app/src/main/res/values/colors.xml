@@ -7,9 +7,8 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="colorPrimary">#4570bf</color>
 
-    <color name="bgbule">#0014e5</color>
-    <color name="movebule">#3074fa</color>
 
     <color name="c_black_1">#191a1c</color>
     <color name="c_black_2">#262626</color>
@@ -19,6 +18,7 @@
 
     <color name="c_grey_1">#949494</color>
     <color name="c_grey_2">#8e9194</color>
+    <color name="c_grey_3">#bbbbbb</color>
 
     <color name="c_golden_1">#55220d</color> <!-- 常规金钱颜色-->
     <color name="c_golden_2">#f8cc86</color>
@@ -26,9 +26,12 @@
 
     <color name="c_blue_1">#7998d1</color>
     <color name="c_blue_2">#4570bf</color>
+    <color name="c_blue_3">#299EE3</color>
 
-    <color name="c_red_2">#bf5f45</color>
+    <color name="c_red_1">#bf5f45</color>
 
-    <color name="c_green_2">#92db48</color>
+    <color name="c_green_1">#92db48</color>
+
+
 
 </resources>

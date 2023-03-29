@@ -13,7 +13,7 @@
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_marginStart="10dp"
-        android:src="@drawable/bg_food_sample"
+        android:src="@drawable/my_face"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -35,13 +35,13 @@
         android:textColor="@color/white"
         app:layout_constraintStart_toEndOf="@+id/iv_goods_img"
         app:layout_constraintTop_toTopOf="@+id/iv_goods_img"
-        tools:text="水果" />
+        tools:text="皮肤" />
 
     <TextView
         android:id="@+id/iv_goods_detail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="好吃的食物，增肥神器，有求必应"
+        android:text="人物角色介绍1"
         android:textColor="@color/c_grey_1"
         android:textSize="10sp"
         app:layout_constraintStart_toStartOf="@+id/iv_goods_name"
@@ -51,7 +51,7 @@
         android:id="@+id/iv_goods_comment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="月售1023 好评率90%"
+        android:text="人物技能介绍2"
         android:textColor="@color/c_grey_1"
         android:textSize="10sp"
         app:layout_constraintStart_toStartOf="@+id/iv_goods_name"

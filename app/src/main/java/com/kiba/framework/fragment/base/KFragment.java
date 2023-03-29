@@ -122,7 +122,7 @@ public abstract class KFragment extends Fragment {
     /**
      * 初始化控件
      */
-    protected abstract void initViews();
+    protected abstract void onCreate();
 
     /**
      * base初始化控件
@@ -135,7 +135,7 @@ public abstract class KFragment extends Fragment {
         mRootView = inflateView(inflater, container);
         mUnbinder = ButterKnife.bind(this, mRootView);
         init_base();//先调用baseFragment的init
-        initViews();
+        onCreate();
         return mRootView;
     }
 

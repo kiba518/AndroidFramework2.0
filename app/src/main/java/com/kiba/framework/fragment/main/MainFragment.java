@@ -29,7 +29,7 @@ public class MainFragment extends BaseFragment {
     }
 
     @Override
-    protected void initViews() {
+    protected void onCreate() {
         List<ElemeGroupedItem> items = FakeLinkageData.getElemeGroupItems();
         //一行代码完成初始化
         linkage.init(items, new Linkage_Primary_AdapterConfig(new Linkage_Primary_AdapterConfig.OnPrimaryItemClickListener() {

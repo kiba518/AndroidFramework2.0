@@ -94,8 +94,14 @@ public class ElemeSecondaryAdapterConfig implements ILinkageSecondaryAdapterConf
     public void onBindViewHolder(final LinkageSecondaryViewHolder holder,
                                  final BaseGroupedItem<ElemeGroupedItem.ItemInfo> item) {
 
-        ((TextView) holder.getView(R.id.iv_goods_name)).setText(item.info.getTitle());
-        Glide.with(context).load(item.info.getImgUrl()).into((ImageView) holder.getView(R.id.iv_goods_img));
+        String price =  item.info.getCost();
+        String content =  item.info.getContent();
+        String imgUrl =  item.info.getImgUrl();
+        String title = item.info.getTitle();
+        String group = item.info.getGroup();
+        title="角色";
+        ((TextView) holder.getView(R.id.iv_goods_name)).setText(title);
+        Glide.with(context).load(imgUrl).placeholder(R.drawable.my_face).into((ImageView) holder.getView(R.id.iv_goods_img));
 
         ViewGroup viewGroup = holder.getView(R.id.iv_goods_item);
         viewGroup.setOnClickListener(v -> {

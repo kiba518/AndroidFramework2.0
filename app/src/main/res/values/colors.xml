@@ -23,6 +23,8 @@
     <color name="c_golden_1">#55220d</color> <!-- 常规金钱颜色-->
     <color name="c_golden_2">#f8cc86</color>
     <color name="c_golden_3">#feedd1</color>
+    <color name="c_golden_4">#fcd125</color>
+
 
     <color name="c_blue_1">#7998d1</color>
     <color name="c_blue_2">#4570bf</color>

@@ -99,10 +99,10 @@ public class ElemeSecondaryAdapterConfig implements ILinkageSecondaryAdapterConf
         String imgUrl =  item.info.getImgUrl();
         String title = item.info.getTitle();
         String group = item.info.getGroup();
-        title="角色";
-        ((TextView) holder.getView(R.id.iv_goods_name)).setText(title);
-        Glide.with(context).load(imgUrl).placeholder(R.drawable.my_face).into((ImageView) holder.getView(R.id.iv_goods_img));
 
+        ((TextView) holder.getView(R.id.iv_goods_name)).setText(title);
+        Glide.with(context).load(imgUrl).placeholder(R.drawable.game_ico).into((ImageView) holder.getView(R.id.iv_goods_img));
+        ((TextView) holder.getView(R.id.iv_goods_detail)).setText(content);
         ViewGroup viewGroup = holder.getView(R.id.iv_goods_item);
         viewGroup.setOnClickListener(v -> {
             if (mItemClickListener != null) {
@@ -110,9 +110,9 @@ public class ElemeSecondaryAdapterConfig implements ILinkageSecondaryAdapterConf
             }
         });
 
-        holder.getView(R.id.iv_goods_add).setOnClickListener(v -> {
+        holder.getView(R.id.ll_down).setOnClickListener(v -> {
             if (mItemClickListener != null) {
-                mItemClickListener.onGoodAdd(v, item);
+                mItemClickListener.onDownLoad(v, item);
             }
         });
     }
@@ -135,7 +135,7 @@ public class ElemeSecondaryAdapterConfig implements ILinkageSecondaryAdapterConf
 
         void onSecondaryItemClick(LinkageSecondaryViewHolder holder, ViewGroup view, BaseGroupedItem<ElemeGroupedItem.ItemInfo> item);
 
-        void onGoodAdd(View view, BaseGroupedItem<ElemeGroupedItem.ItemInfo> item);
+        void onDownLoad(View view, BaseGroupedItem<ElemeGroupedItem.ItemInfo> item);
 
     }
 }

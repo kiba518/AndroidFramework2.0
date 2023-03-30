@@ -1,81 +1,126 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/iv_goods_item"
     android:layout_width="match_parent"
     android:background="@color/c_black_1"
+    android:orientation="horizontal"
+
     android:layout_height="100dp">
 
-    <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/iv_goods_img"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:layout_marginStart="10dp"
-        android:src="@drawable/my_face"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/iv_goods_img_tip"
-        android:layout_width="40dp"
-        android:layout_height="20dp"
-        android:src="@drawable/tag_new_good"
-        app:layout_constraintStart_toStartOf="@+id/iv_goods_img"
-        app:layout_constraintTop_toTopOf="@+id/iv_goods_img" />
-
-    <TextView
-        android:id="@+id/iv_goods_name"
+    <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:textStyle="bold"
-        android:textColor="@color/white"
-        app:layout_constraintStart_toEndOf="@+id/iv_goods_img"
-        app:layout_constraintTop_toTopOf="@+id/iv_goods_img"
-        tools:text="皮肤" />
+        android:layout_height="match_parent"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="10dp"
+        android:gravity="center">
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_goods_img"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
 
-    <TextView
-        android:id="@+id/iv_goods_detail"
+            android:src="@drawable/my_face"
+
+            />
+    </LinearLayout>
+    <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="人物角色介绍1"
-        android:textColor="@color/c_grey_1"
-        android:textSize="10sp"
-        app:layout_constraintStart_toStartOf="@+id/iv_goods_name"
-        app:layout_constraintTop_toBottomOf="@+id/iv_goods_name" />
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center">
+        <TextView
+            android:id="@+id/iv_goods_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:textSize="14dp"
+            tools:text="游戏" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/background_radius_border_yellow"
 
-    <TextView
-        android:id="@+id/iv_goods_comment"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="人物技能介绍2"
-        android:textColor="@color/c_grey_1"
-        android:textSize="10sp"
-        app:layout_constraintStart_toStartOf="@+id/iv_goods_name"
-        app:layout_constraintTop_toBottomOf="@+id/iv_goods_detail" />
 
-    <TextView
-        android:id="@+id/iv_goods_price"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:text="¥18.8"
-        android:textColor="@color/c_red_1"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/iv_goods_name"
-        app:layout_constraintTop_toBottomOf="@+id/iv_goods_comment" />
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="光年"
+                    android:textColor="@color/c_golden_4"
+                    android:textSize="10dp"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginRight="4dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginBottom="2dp"
+                    />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:background="@drawable/background_radius_yellow"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="推荐"
+                    android:textColor="@color/black"
+                    android:textSize="10sp"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginRight="4dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginBottom="2dp"
+                    />
+            </LinearLayout>
+        </LinearLayout>
+        <TextView
+            android:id="@+id/iv_goods_detail"
+            android:layout_marginTop="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="更新日期：2023-04-01"
+            android:textColor="@color/white"
+            android:textSize="14dp"
+          />
 
-    <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/iv_goods_add"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_margin="10dp"
-        android:src="@drawable/btn_add_food"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="right"
+        >
+        <LinearLayout
+            android:id="@+id/ll_down"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="16dp"
+            android:background="@drawable/background_radius_yellow"
+            android:layout_gravity="center"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="下载"
+                android:textColor="@color/black"
+                android:textSize="14dp"
+                android:layout_marginLeft="4dp"
+                android:layout_marginRight="4dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

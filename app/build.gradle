@@ -69,6 +69,8 @@ dependencies {
     //图片处理glide
     implementation 'com.github.bumptech.glide:glide:4.14.2'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.14.2'//运行时 编译时 处理注解
+    //glide圆角
+    implementation 'jp.wasabeef:glide-transformations:3.3.0'
     //双列表联动
     implementation 'com.kunminx.linkage:linkage-recyclerview:1.9.2'
     //base64，aes，rsa等编码

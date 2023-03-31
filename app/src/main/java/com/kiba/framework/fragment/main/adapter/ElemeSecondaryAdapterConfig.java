@@ -30,6 +30,7 @@ public class ElemeSecondaryAdapterConfig implements ILinkageSecondaryAdapterConf
 
     public ElemeSecondaryAdapterConfig(OnSecondaryItemClickListener itemClickListener) {
         mItemClickListener = itemClickListener;
+
     }
 
     public ElemeSecondaryAdapterConfig setOnItemClickListener(OnSecondaryItemClickListener itemClickListener) {
@@ -52,7 +53,8 @@ public class ElemeSecondaryAdapterConfig implements ILinkageSecondaryAdapterConf
      */
     @Override
     public int getGridLayoutId() {
-        return R.layout.linkage_secondary_grid;
+        return -1;
+        //return R.layout.linkage_secondary_grid;
     }
     /**
      * 竖向布局文件 当前执行导入的是竖向布局

@@ -1,6 +1,7 @@
 package com.kiba.framework.fragment.anim.zoom;
 
 import android.animation.ObjectAnimator;
+import android.animation.ValueAnimator;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.view.Gravity;
@@ -48,6 +49,7 @@ public class ZoomAnimator extends LinearLayout {
     private void setObjectAnimatorOfFloat(String propertyName, float... values) {
         ObjectAnimator objectAnimator = ObjectAnimator.ofFloat(this, propertyName, values);
         objectAnimator.setDuration(1000);
+        objectAnimator.setRepeatCount(ValueAnimator.INFINITE);//无限循环
         objectAnimator.start();
     }
 

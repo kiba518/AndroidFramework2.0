@@ -3,7 +3,8 @@ import android.os.Bundle;
 import android.view.KeyEvent;
 import com.kiba.framework.R;
 import com.kiba.framework.activity.base.BaseActivity;
-import com.kiba.framework.fragment.main.MainFragment;
+import com.kiba.framework.fragment.anim.flower.FlowerFragment;
+import com.kiba.framework.fragment.anim.zoom.ZoomFragment;
 
 
 public class MainActivity extends BaseActivity {
@@ -17,7 +18,11 @@ public class MainActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-        replaceFragment(new MainFragment());
+        //replaceFragment(new MainFragment());
+        replaceFragment(new FlowerFragment());
+        replaceFragment(new ZoomFragment());
+
+
     }
     /**
      * 菜单、返回键响应

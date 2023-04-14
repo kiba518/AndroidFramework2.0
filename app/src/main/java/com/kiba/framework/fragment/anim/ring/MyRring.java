@@ -101,7 +101,7 @@ public class MyRring extends View{
     //-------------------------绘制我们的内容----------------------
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        //绘制圆环
+        //绘制星星
         drawStar(mPath,cx,cy,radius,radius*2,30);//旋转30°
         canvas.drawPath(mPath, paint);
     }

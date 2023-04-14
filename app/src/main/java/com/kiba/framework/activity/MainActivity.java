@@ -4,7 +4,9 @@ import android.view.KeyEvent;
 import com.kiba.framework.R;
 import com.kiba.framework.activity.base.BaseActivity;
 import com.kiba.framework.fragment.anim.flower.FlowerFragment;
+import com.kiba.framework.fragment.anim.water.WaterFragment;
 import com.kiba.framework.fragment.anim.zoom.ZoomFragment;
+import com.kiba.framework.fragment.main.MainFragment;
 
 
 public class MainActivity extends BaseActivity {
@@ -18,9 +20,11 @@ public class MainActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-        //replaceFragment(new MainFragment());
-        replaceFragment(new FlowerFragment());
-        replaceFragment(new ZoomFragment());
+
+        replaceFragment(new WaterFragment());
+//        replaceFragment(new MainFragment());
+//        replaceFragment(new FlowerFragment());
+//        replaceFragment(new ZoomFragment());
 
 
     }

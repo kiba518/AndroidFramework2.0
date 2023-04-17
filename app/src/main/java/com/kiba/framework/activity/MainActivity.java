@@ -7,6 +7,7 @@ import com.kiba.framework.fragment.anim.flower.FlowerFragment;
 import com.kiba.framework.fragment.anim.water.WaterFragment;
 import com.kiba.framework.fragment.anim.zoom.ZoomFragment;
 import com.kiba.framework.fragment.main.MainFragment;
+import com.kiba.framework.fragment.opengl.OpenGLFragment;
 
 
 public class MainActivity extends BaseActivity {
@@ -21,7 +22,8 @@ public class MainActivity extends BaseActivity {
 
         super.onCreate(savedInstanceState);
 
-        replaceFragment(new WaterFragment());
+        replaceFragment(new OpenGLFragment());
+//        replaceFragment(new WaterFragment());
 //        replaceFragment(new MainFragment());
 //        replaceFragment(new FlowerFragment());
 //        replaceFragment(new ZoomFragment());

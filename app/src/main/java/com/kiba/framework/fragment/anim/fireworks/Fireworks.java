@@ -7,6 +7,7 @@ import android.graphics.Paint;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffXfermode;
 import android.graphics.Rect;
+import android.util.Log;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 
@@ -310,8 +311,13 @@ public class Fireworks extends SurfaceView implements SurfaceHolder.Callback {
     }
 
     void bit_set(int i, int j, int k) {
-        int l = i + j * m_nAppX;
-        pix0[l] = k;
+        try {
+            int l = i + j * m_nAppX;
+            pix0[l] = k;
+        }
+        catch (Exception ex){
+            Log.d("bit set","i"+i +" j"+j+" k"+k+" l"+(i + j * m_nAppX));
+        }
     }
     protected void doWork(Canvas canvas) {
         if (offImage != null)

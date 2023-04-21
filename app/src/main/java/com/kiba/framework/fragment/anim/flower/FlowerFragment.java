@@ -14,7 +14,7 @@ import butterknife.OnClick;
 public class FlowerFragment extends BaseFragment {
     @BindView(R.id.btn_start)
     Button btn_start;
-    // 撒花特效
+    // 撒雪花特效
     @BindView(R.id.rlt_animation_layout)
     RelativeLayout rlt_animation_layout;
 
@@ -27,7 +27,7 @@ public class FlowerFragment extends BaseFragment {
 
     @Override
     protected void onCreate() {
-        // 撒花初始化
+        // 撒雪花初始化
         flowerAnimation = new FlowerAnimation(this.getContext());
         rlt_animation_layout.addView(flowerAnimation);
     }

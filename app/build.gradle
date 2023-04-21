@@ -36,6 +36,9 @@ android {
     buildFeatures {
         viewBinding true
     }
+    aaptOptions {
+        noCompress "mp3"  //表示不让aapt压缩的文件后缀
+    }
 }
 
 dependencies {

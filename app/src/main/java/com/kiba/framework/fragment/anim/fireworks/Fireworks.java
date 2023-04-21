@@ -29,17 +29,13 @@ public class Fireworks extends SurfaceView implements SurfaceHolder.Callback {
     private int m_mouseY;
     private int m_sleepTime;
     private boolean isError;
-    private boolean m_isPaintFinished;
-    boolean isRunning;
 
-    Thread runner;
     int pix0[];
     Bitmap offImage;
 
     int pixls;
     int pixls2;
     int bit_max = 100;
-    int bit_sound = 2;
 
     boolean isInitialized;
     Random rand;
@@ -63,6 +59,7 @@ public class Fireworks extends SurfaceView implements SurfaceHolder.Callback {
      */
     private Paint mPaint;
     private Rect drawRect = new Rect(0, 0, 0, 0);
+
     public Fireworks(Context context) {
         super(context);
         holder = this.getHolder();
@@ -101,6 +98,7 @@ public class Fireworks extends SurfaceView implements SurfaceHolder.Callback {
             }
         });
     }
+
     public void init() {
         m_nAppX = this.getRect().width() / 2;
         m_nAppY = this.getRect().height() / 2;
@@ -125,6 +123,7 @@ public class Fireworks extends SurfaceView implements SurfaceHolder.Callback {
 
         isInitialized = true;
     }
+
     @Override
     public void surfaceChanged(SurfaceHolder holder, int format, int width, int height) {
 
@@ -172,6 +171,7 @@ public class Fireworks extends SurfaceView implements SurfaceHolder.Callback {
     public Rect getRect() {
         return mRect;
     }
+
     /**
      * 绘制界面的线程
      *
@@ -215,9 +215,11 @@ public class Fireworks extends SurfaceView implements SurfaceHolder.Callback {
         }
 
     }
+
     public void endWork() {
         mStatus = DrawStatus.Ending;
     }
+
     protected void calculatePerframe() {
         try {
             Thread.sleep(m_sleepTime);
@@ -225,6 +227,7 @@ public class Fireworks extends SurfaceView implements SurfaceHolder.Callback {
             e.printStackTrace();
         }
     }
+
     protected void change() {
         if (isInitialized) {
             for (int j = 0; j < pixls2; j++) {
@@ -256,14 +259,9 @@ public class Fireworks extends SurfaceView implements SurfaceHolder.Callback {
             mCanvas.drawBitmap(pix0, 0, m_nAppX, 0, 0, m_nAppX, m_nAppY, true,
                     mPaint);
 
-//            Bitmap bitmap = Bitmap.createBitmap(100, 100, Bitmap.Config.ARGB_8888);
-//            bitmap.copyPixelsFromBuffer(IntBuffer.wrap(pix0));
-//            Rect rect1 = new Rect(0, 0, m_nAppX, m_nAppY);
-//            Rect rectF = new Rect(0, 0, m_nAppX,m_nAppY);
-//            mCanvas.drawBitmap(bitmap, rect1, rectF, mPaint);
-
         }
     }
+
     void rend() {
         boolean flag = false;
         boolean flag1 = false;
@@ -305,25 +303,26 @@ public class Fireworks extends SurfaceView implements SurfaceHolder.Callback {
                     break;
             }
 
-//        if (flag2 && bit_sound > 0)
-//            // sm.playInMediaPlayer(R.raw.firework, null);
-//            soundPool.play(id_sound1, 0);
+        if (flag2) {
+
+        }
     }
 
     void bit_set(int i, int j, int k) {
         try {
             int l = i + j * m_nAppX;
             pix0[l] = k;
-        }
-        catch (Exception ex){
-            Log.d("bit set","i"+i +" j"+j+" k"+k+" l"+(i + j * m_nAppX));
+        } catch (Exception ex) {
+            Log.d("bit set", "i" + i + " j" + j + " k" + k + " l" + (i + j * m_nAppX));
         }
     }
+
     protected void doWork(Canvas canvas) {
         if (offImage != null)
             canvas.drawBitmap(offImage, drawRect, this.getRect(), mPaint);//剪切原图的左上角1/4，然后全屏绘制
 
     }
+
     protected void clear() {
         synchronized (holder) {
             Canvas canvas = this.holder.lockCanvas();
@@ -337,6 +336,7 @@ public class Fireworks extends SurfaceView implements SurfaceHolder.Callback {
             }
         }
     }
+
     /**
      * 清空
      *
@@ -348,7 +348,7 @@ public class Fireworks extends SurfaceView implements SurfaceHolder.Callback {
         mPaint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC));
     }
 
-    public boolean shot( int x, int y) {
+    public boolean shot(int x, int y) {
 
 
         x = x / 2;
@@ -366,6 +366,7 @@ public class Fireworks extends SurfaceView implements SurfaceHolder.Callback {
         m_mouseY = y;
         return true;
     }
+
     public void dot(int x, int y) {
         m_mouseX = x;
         m_mouseY = y;

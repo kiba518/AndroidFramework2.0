@@ -22,7 +22,7 @@ public class FireworksFragment extends BaseFragment {
 
     @Override
     protected int getLayoutId() {
-        return R.layout.fragment_flower3;
+        return R.layout.fragment_fireworks;
     }
 
     @Override
